@@ -446,41 +446,66 @@
         }
 
         /* Mobile Menu */
-        .mobile-menu {
+                .mobile-menu {
             position: fixed;
             top: 0;
-            left: 0;
-            width: 100%;
+            right: 0;
+            width: 280px;
             height: 100vh;
             background: var(--clr-cream);
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 24px;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 100px 40px 40px;
+            gap: 8px;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -4px 0 32px rgba(0,0,0,0.10);
+            border-left: 1px solid var(--clr-border);
         }
 
-        .mobile-menu.open {
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,10,10,0.35);
+            backdrop-filter: blur(2px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+
+        .mobile-menu-overlay.open {
             opacity: 1;
             visibility: visible;
         }
 
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
         .mobile-menu a {
-            font-size: 40px;
+            font-size: 20px;
             font-family: var(--font-head);
             color: var(--clr-black);
-            transform: translateY(20px);
             opacity: 0;
-            transition: all 0.4s ease;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--clr-border);
+            width: 100%;
         }
 
         .mobile-menu.open a {
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1;
+        }
+
+        .mobile-menu-btn {
+            font-size: 24px;
+            transition: transform 0.3s ease;
         }
 
         /* Cards */
@@ -1213,15 +1238,26 @@
         const mobileMenu = document.getElementById('mobileMenu');
         let menuOpen = false;
 
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        if (mobileOverlay) {
+            mobileOverlay.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileOverlay.classList.remove('open');
+                mobileBtn.innerHTML = '&#9776;';
+            });
+        }
+
         mobileBtn.addEventListener('click', () => {
             menuOpen = !menuOpen;
             if (menuOpen) {
                 mobileMenu.classList.add('open');
-                mobileBtn.textContent = '✕';
+                mobileBtn.innerHTML = '&#10005;';
+                if (mobileOverlay) mobileOverlay.classList.add('open');
                 document.body.style.overflow = 'hidden';
             } else {
                 mobileMenu.classList.remove('open');
-                mobileBtn.textContent = '☰';
+                mobileBtn.innerHTML = '&#9776;';
+                if (mobileOverlay) mobileOverlay.classList.remove('open');
                 document.body.style.overflow = '';
             }
         });
