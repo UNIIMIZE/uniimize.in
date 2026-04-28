@@ -493,13 +493,13 @@
         }
 
         /* Scroll Reveal */
-        .reveal {
+        .js-ready .reveal {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .reveal.active {
+        .js-ready .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1167,6 +1167,7 @@
         });
 
         // Scroll Reveal
+        document.body.classList.add('js-ready');
         const revealElements = document.querySelectorAll('.reveal');
         
         const revealOptions = {
