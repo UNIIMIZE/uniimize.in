@@ -476,9 +476,8 @@
         }
 
         .main-content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 80px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .main-article h2 {
@@ -818,6 +817,21 @@
                         <strong>6 Months</strong>
                     </div>
                 </div>
+            
+                <div class="client-info-block results-block" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px; border-color: var(--clr-blue); background: var(--clr-cream);">
+                    <div class="client-info-item">
+                        <span>Organic Traffic</span>
+                        <strong style="font-size: 40px; color: var(--clr-blue); font-family: var(--font-head); line-height: 1;">+300%</strong>
+                    </div>
+                    <div class="client-info-item">
+                        <span>Return on Ad Spend</span>
+                        <strong style="font-size: 40px; color: var(--clr-blue); font-family: var(--font-head); line-height: 1;">2.5x</strong>
+                    </div>
+                    <div class="client-info-item">
+                        <span>Customer Acquisition Cost</span>
+                        <strong style="font-size: 40px; color: var(--clr-blue); font-family: var(--font-head); line-height: 1;">-40%</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -826,32 +840,11 @@
     <section style="padding-top: 0;">
         <div class="container">
             <div class="big-hero-image reveal">
-                [Full Width Image Placeholder - E-commerce Dashboard / Campaign Visual]
+                <img loading="lazy" src="assets/ecommerce.webp" alt="Case Study Hero" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
 
             <div class="main-content-grid">
                 
-                <!-- Sidebar -->
-                <div class="sidebar-wrapper reveal" style="transition-delay: 0.1s">
-                    <div class="sidebar">
-                        <div class="sidebar-card">
-                            <h3>The Results</h3>
-                            <div class="result-item">
-                                <span class="result-val">+300%</span>
-                                <span class="result-label">Organic Traffic</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-val">2.5x</span>
-                                <span class="result-label">Return on Ad Spend</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-val">-40%</span>
-                                <span class="result-label">Customer Acquisition Cost</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Article -->
                 <div class="main-article reveal">
                     <h2>The Challenge</h2>

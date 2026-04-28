@@ -476,9 +476,8 @@
         }
 
         .main-content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 80px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .main-article h2 {
@@ -818,6 +817,21 @@
                         <strong>9 Months</strong>
                     </div>
                 </div>
+            
+                <div class="client-info-block results-block" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px; border-color: var(--clr-blue); background: var(--clr-cream);">
+                    <div class="client-info-item">
+                        <span>Top 3 Rankings</span>
+                        <strong style="font-size: 40px; color: var(--clr-blue); font-family: var(--font-head); line-height: 1;">150+</strong>
+                    </div>
+                    <div class="client-info-item">
+                        <span>Organic Leads</span>
+                        <strong style="font-size: 40px; color: var(--clr-blue); font-family: var(--font-head); line-height: 1;">4x</strong>
+                    </div>
+                    <div class="client-info-item">
+                        <span>Cost per Lead</span>
+                        <strong style="font-size: 40px; color: var(--clr-blue); font-family: var(--font-head); line-height: 1;">-60%</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -826,32 +840,11 @@
     <section style="padding-top: 0;">
         <div class="container">
             <div class="big-hero-image reveal">
-                [Full Width Image Placeholder - B2B SaaS Dashboard / Analytics]
+                <img loading="lazy" src="assets/b2b.png" alt="Case Study Hero" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
 
             <div class="main-content-grid">
                 
-                <!-- Sidebar -->
-                <div class="sidebar-wrapper reveal" style="transition-delay: 0.1s">
-                    <div class="sidebar">
-                        <div class="sidebar-card">
-                            <h3>The Results</h3>
-                            <div class="result-item">
-                                <span class="result-val">150+</span>
-                                <span class="result-label">Top 3 Rankings</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-val">4x</span>
-                                <span class="result-label">Organic Leads</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-val">-60%</span>
-                                <span class="result-label">Cost per Lead</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Article -->
                 <div class="main-article reveal">
                     <h2>The Challenge</h2>
